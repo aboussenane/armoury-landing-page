@@ -44,7 +44,7 @@ export default function WithSubnavigation() {
         justify={'space-between'}
         >
        <Image src={'./Armoury-title.png'} alt="Armoury Logo" h={100} ml={2}/>
-        <Heading as="h1" size="2xl" mb={4} textAlign="center" color="brand.100">    
+        <Heading display={{ base: 'none', md: 'flex' }}> as="h1" size="2xl" mb={4} textAlign="center" color="brand.100">    
             Armoury
         </Heading>
         <Flex
