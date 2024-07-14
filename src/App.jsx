@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import WithSubnavigation from './components/navbar'
 import Home from './pages/Home'
+import Footer from './components/footer'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -11,6 +13,7 @@ function App() {
     <>
       <WithSubnavigation/>
       <Home/>
+      <Footer/>
     </>
   )
 }

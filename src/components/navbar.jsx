@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Flex,
@@ -28,9 +28,25 @@ import {
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
+  const [showNav, setShowNav] = useState(true);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setShowNav(true);
+      } else {
+        setShowNav(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-    <Box w="100vw" position="fixed" top={0} left={0} right={0} zIndex={1000} bg={'brand.300'} color={'brand.50'}>
+    <Box w="100vw" position="fixed" top={0} left={0} right={0} zIndex={1000} bg={'brand.300'} color={'brand.50'}
+    transform={showNav ? 'translateY(0)' : 'translateY(-100%)'}>
       <Flex
         bg={'brand.300'}
         color={'brand.50'}
@@ -44,8 +60,8 @@ export default function WithSubnavigation() {
         justify={'space-between'}
         >
        <Image src={'./Armoury-title.png'} alt="Armoury Logo" h={100} ml={2}/>
-        <Heading display={{ base: 'none', md: 'flex' }}> as="h1" size="2xl" mb={4} textAlign="center" color="brand.100">    
-            Armoury
+        <Heading display={{ base: 'none', md: 'flex' }} as="h1" size="2xl" mb={4} textAlign="center" color="brand.100">    
+            ARMOURY
         </Heading>
         <Flex
           flex={{ base: 1, md: 'auto' }}
