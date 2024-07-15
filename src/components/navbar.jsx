@@ -25,6 +25,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
@@ -59,10 +60,14 @@ export default function WithSubnavigation() {
         align={'center'}
         justify={'space-between'}
         >
-       <Image src={'./Armoury-title.png'} alt="Armoury Logo" h={100} ml={2}/>
+        <Link to="/">
+       <Image src={'./Armoury-blank.png'} alt="Armoury Logo" h={100} ml={2}/>
+       </Link>
         <Heading display={{ base: 'none', md: 'flex' }} as="h1" size="2xl" mb={4} textAlign="center" color="brand.100">    
+            
             ARMOURY
         </Heading>
+        
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
@@ -89,7 +94,7 @@ export default function WithSubnavigation() {
           direction={'row'}
           spacing={6}>
           
-          <Button as={'a'} fontSize={'lg'} _hover={{color: 'brand.100' }}fontWeight={600} variant={'link'} href={'#'}>
+          <Button as={Link} to="/WIP" fontSize={'lg'} _hover={{color: 'brand.100' }}fontWeight={600} variant={'link'}>
             Sign In
           </Button>
           <Button
@@ -99,7 +104,7 @@ export default function WithSubnavigation() {
             fontWeight={500}
             color={'brand.300'}
             bg={'brand.200'}
-            href={'#'}
+            href={'/WIP'}
             _hover={{
               bg: 'brand.100',
               color: 'brand.300',
@@ -262,30 +267,30 @@ const MobileNavItem = ({ label, children, href }) => {
 const NAV_ITEMS = [
   {
     label: 'How it works',
-    href: '#',
+    href: '/',
   },
   {
     label: 'Industries',
     children: [
       {
         label: 'Media Production & Broadcasting',
-        href: '#',
+        href: '/WIP',
       },
       {
         label: 'Education',
-        href: '#',
+        href: '/WIP',
       },
       {
         label: 'Worship',
-        href: '#',
+        href: '/WIP',
       },
       {
         label: 'Gaming and software development',
-        href: '#',
+        href: '/WIP',
       },
       {
         label: 'Electronics and hardware',
-        href: '#',
+        href: '/WIP',
       },
 
     ],
@@ -295,23 +300,23 @@ const NAV_ITEMS = [
     children: [
       {
         label: 'Reservations & Checkouts',
-        href: '#',
+        href: '/WIP',
       },
       {
         label: 'Self-Service Portal',
-        href: '#',
+        href: '/WIP',
       },
       {
         label: 'Reports',
-        href: '#',
+        href: '/WIP',
       },
       {
         label: 'Inventory',
-        href: '#',
+        href: '/WIP',
       },
       {
         label: 'Mobile App',
-        href: '#',
+        href: '/WIP',
       },
       
 
@@ -319,6 +324,6 @@ const NAV_ITEMS = [
   },
   {
     label: 'Pricing',
-    href: '#',
+    href: '/WIP',
   },
 ];

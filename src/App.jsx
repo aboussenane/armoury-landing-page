@@ -5,14 +5,24 @@ import './App.css'
 import WithSubnavigation from './components/navbar'
 import Home from './pages/Home'
 import Footer from './components/footer'
+import WIP from './pages/WIP'
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
       <WithSubnavigation/>
-      <Home/>
+      
+      
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/WIP" element={<WIP />} />
+        
+      </Routes>
+      
       <Footer/>
     </>
   )
